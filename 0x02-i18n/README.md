@@ -1,7 +1,7 @@
 # 0x02. i18n
 #### `Back-end`
 
-![](/Users/stacygakiria/alx-backend/0x02-i18n/Images/image1.jpeg)
+![image 1](https://github.com/SKGakiria/alx-backend/assets/117808293/6fa98f85-fa07-4902-8107-78321851f4ce)
 
 ## Resources
 **Read or watch:**
@@ -69,7 +69,7 @@ Now you should be able to test different translations by visiting `http://127.0.
 
 **Visiting `http://127.0.0.1:5000/?locale=fr` should display this level 1 heading:**
 
-![](/Users/stacygakiria/alx-backend/0x02-i18n/Images/image2.png)
+<img width="254" alt="image 2" src="https://github.com/SKGakiria/alx-backend/assets/117808293/9daf09e4-df7d-4aaa-8602-14a99ec776f8">
 
 5. Mock logging in
 Creating a user login system is outside the scope of this project. To emulate a similar behavior, copy the following user table in `5-app.py`.
@@ -96,11 +96,12 @@ In your HTML template, if a user is logged in, in a paragraph tag, display a wel
 
 **Visiting `http://127.0.0.1:5000/` in your browser should display this:**
 
-![](/Users/stacygakiria/alx-backend/0x02-i18n/Images/image3.png)
+<img width="213" alt="image 3" src="https://github.com/SKGakiria/alx-backend/assets/117808293/753eaad5-529d-4970-ba79-54217734d162">
 
 **Visiting http://127.0.0.1:5000/?login_as=2 in your browser should display this:**
 
-![](/Users/stacygakiria/alx-backend/0x02-i18n/Images/image4.png)
+<img width="259" alt="image 4" src="https://github.com/SKGakiria/alx-backend/assets/117808293/f2b17e3f-07e4-44a5-ba3a-e5c6c59e45e2">
+
 
 6. Use user locale
 Change your `get_locale` function to use a user’s preferred local if it is supported.
@@ -114,7 +115,7 @@ The order of priority should be
 
 Test by logging in as different users
 
-![](/Users/stacygakiria/alx-backend/0x02-i18n/Images/image5.png)
+<img width="272" alt="image 5" src="https://github.com/SKGakiria/alx-backend/assets/117808293/23581468-fe91-4003-90b0-eb2d21363a2d">
 
 7. Infer appropriate time zone
 Define a `get_timezone` function and use the `babel.timezoneselector` decorator.
@@ -140,8 +141,9 @@ Use the following translations
 
 **Displaying the time in French looks like this:**
 
-![](/Users/stacygakiria/alx-backend/0x02-i18n/Images/image6.png)
+<img width="299" alt="image 6" src="https://github.com/SKGakiria/alx-backend/assets/117808293/09c0ff54-c8e9-4e89-ba06-bc1926020ef8">
 
 **Displaying the time in English looks like this:**
 
-![](/Users/stacygakiria/alx-backend/0x02-i18n/Images/image7.png)
+<img width="328" alt="image 7" src="https://github.com/SKGakiria/alx-backend/assets/117808293/4bc7b680-059a-4254-b833-79b2336e8da5">
+
