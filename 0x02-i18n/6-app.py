@@ -2,6 +2,7 @@
 """Script that starts a Flask web application"""
 from flask import Flask, render_template, request, g
 from flask_babel import Babel
+from typing import Dict, Union
 
 
 app = Flask(__name__)
@@ -49,13 +50,21 @@ def get_locale():
     loca = request.args.get('locale')
     if loca in app.config['LANGUAGES']:
         return loca
+    if g.user:
+        loca = g.user.get('locale')
+        if loca and loca in app.config['LANGUAGES']:
+            return loca
+    loca = request.headers.get('locale', None)
+    loca = request.args.get('locale')
+    if loca in app.config['LANGUAGES']:
+        return loca
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
 @app.route('/', strict_slashes=False)
 def index() -> str:
     """Handles the single / route"""
-    return render_template('5-index.html')
+    return render_template('6-index.html')
 
 
 if __name__ == "__main__":
