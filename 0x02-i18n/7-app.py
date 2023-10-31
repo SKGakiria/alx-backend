@@ -30,7 +30,7 @@ class Config(object):
 app.config.from_object(Config)
 
 
-def get_user():
+def get_user() -> Union[Dict, None]:
     """Function returns a user dict or None if ID can't be found
     or if 'login_as' isn't passed"""
     id = request.args.get('login_as', None)
