@@ -1,7 +1,7 @@
 # 0x02. i18n
 #### `Back-end`
 
-![](/Users/stacygakiria/alx-backend/0x02-i18n/Images/image 1.jpeg)
+![](/Users/stacygakiria/alx-backend/0x02-i18n/Images/image1.jpeg)
 
 ## Resources
 **Read or watch:**
@@ -69,7 +69,7 @@ Now you should be able to test different translations by visiting `http://127.0.
 
 **Visiting `http://127.0.0.1:5000/?locale=fr` should display this level 1 heading:**
 
-![](/Users/stacygakiria/alx-backend/0x02-i18n/Images/image 2.png)
+![](/Users/stacygakiria/alx-backend/0x02-i18n/Images/image2.png)
 
 5. Mock logging in
 Creating a user login system is outside the scope of this project. To emulate a similar behavior, copy the following user table in `5-app.py`.
@@ -96,11 +96,11 @@ In your HTML template, if a user is logged in, in a paragraph tag, display a wel
 
 **Visiting `http://127.0.0.1:5000/` in your browser should display this:**
 
-![](/Users/stacygakiria/alx-backend/0x02-i18n/Images/image 3.png)
+![](/Users/stacygakiria/alx-backend/0x02-i18n/Images/image3.png)
 
 **Visiting http://127.0.0.1:5000/?login_as=2 in your browser should display this:**
 
-![](/Users/stacygakiria/alx-backend/0x02-i18n/Images/image 4.png)
+![](/Users/stacygakiria/alx-backend/0x02-i18n/Images/image4.png)
 
 6. Use user locale
 Change your `get_locale` function to use a user’s preferred local if it is supported.
@@ -114,7 +114,7 @@ The order of priority should be
 
 Test by logging in as different users
 
-![](/Users/stacygakiria/alx-backend/0x02-i18n/Images/image 5.png)
+![](/Users/stacygakiria/alx-backend/0x02-i18n/Images/image5.png)
 
 7. Infer appropriate time zone
 Define a `get_timezone` function and use the `babel.timezoneselector` decorator.
@@ -140,8 +140,8 @@ Use the following translations
 
 **Displaying the time in French looks like this:**
 
-![](/Users/stacygakiria/alx-backend/0x02-i18n/Images/image 6.png)
+![](/Users/stacygakiria/alx-backend/0x02-i18n/Images/image6.png)
 
 **Displaying the time in English looks like this:**
 
-![](/Users/stacygakiria/alx-backend/0x02-i18n/Images/image 3.png)
+![](/Users/stacygakiria/alx-backend/0x02-i18n/Images/image7.png)
