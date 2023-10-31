@@ -3,8 +3,10 @@
 from flask import Flask, render_template, request, g
 from flask_babel import Babel
 from typing import Dict, Union
+from datetime import datetime
 from datetime import timezone as tmzn
 from pytz import timezone
+import locale
 import pytz.exceptions
 
 
@@ -44,6 +46,11 @@ def before_request():
     """Finds a user if any, and sets it as a global on flask.g.user"""
     user = get_user()
     g.user = user
+    curr_time = pytz.utc.localize(datetime.utcnow())
+    time = curr_time.astimezone(timezone(get_timezone()))
+    locale.setlocale(locale.LC_TIME, (get_locale(), 'UTF-8'))
+    fmt = "%b %d, %Y %I:%M:%S %p"
+    g.time = time.strftime(fmt)
 
 
 @babel.localeselector
@@ -87,7 +94,7 @@ def get_timezone():
 @app.route('/', strict_slashes=False)
 def index() -> str:
     """Handles the single / route"""
-    return render_template('7-index.html')
+    return render_template('index.html')
 
 
 if __name__ == "__main__":
