@@ -89,6 +89,7 @@ In your HTML template, if a user is logged in, in a paragraph tag, display a wel
 | --------- | ----------- | ---------- |
 | `logged_in_as` | `"You are logged in as %(username)s."` | `"Vous êtes connecté en tant que %(username)s."` |
 | `not_logged_in` | `"You are not logged in."` | `"Vous n'êtes pas connecté."` |
+
 **Visiting `http://127.0.0.1:5000/` in your browser should display this:**
 
 **Visiting http://127.0.0.1:5000/?login_as=2 in your browser should display this:**
