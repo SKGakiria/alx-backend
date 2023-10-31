@@ -3,6 +3,9 @@
 from flask import Flask, render_template, request, g
 from flask_babel import Babel
 from typing import Dict, Union
+from datetime import timezone as tmzn
+from pytz import timezone
+import pytz.exceptions
 
 
 app = Flask(__name__)
@@ -27,7 +30,7 @@ class Config(object):
 app.config.from_object(Config)
 
 
-def get_user() -> Union[Dict, None]:
+def get_user():
     """Function returns a user dict or None if ID can't be found
     or if 'login_as' isn't passed"""
     id = request.args.get('login_as', None)
@@ -61,10 +64,30 @@ def get_locale():
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
+@babel.timezoneselector
+def get_timezone():
+    """Function to invoke each request, selecting and returning the
+    appropriate timezone"""
+    tmzone = request.args.get('timezone', None)
+    if tmzone:
+        try:
+            return timezone(tmzone).zone
+        except pytz.exceptions.UnknownTimeZoneError:
+            pass
+    if g.user:
+        try:
+            tmzone = g.user.get('timezone')
+            return timezone(tmzone).zone
+        except pytz.exceptions.UnknownTimeZoneError:
+            pass
+    deflt = app.config['BABEL_DEFAULT_TIMEZONE']
+    return deflt
+
+
 @app.route('/', strict_slashes=False)
 def index() -> str:
     """Handles the single / route"""
-    return render_template('6-index.html')
+    return render_template('7-index.html')
 
 
 if __name__ == "__main__":
